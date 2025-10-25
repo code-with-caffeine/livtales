@@ -1,11 +1,14 @@
 import './App.css';
+import hero1 from './assets/hero1.webp'
+import BlurText from "./components/BlurText";
+
 export default function LandingPage() {
     return (
       <div
         className="relative h-screen w-full bg-cover bg-center flex flex-col"
         style={{
           backgroundImage:
-            "url('src/assets/hero1.webp')",
+            `url(${hero1})`,
         }}
       >
         {/* Overlay for dark effect */}
@@ -20,9 +23,12 @@ export default function LandingPage() {
   
         {/* Right-aligned Text */}
         <main className="relative z-10 flex-grow flex items-center justify-end px-6 md:px-12">
-          <h2 className="text-white text-3xl md:text-5xl text-right max-w-[50%] md:max-w-[35%] leading-tight ly">
-            Where stories fantasize into reality!
-          </h2>
+          <BlurText 
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="text-white text-3xl md:text-5xl text-right max-w-[50%] md:max-w-[35%] leading-tight ly"
+            text = "Where stories fantasize into reality!"/>
         </main>
       </div>
     );
